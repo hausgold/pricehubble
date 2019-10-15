@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pricehubble.com/auth/login/credentials
+    body:
+      encoding: UTF-8
+      string: '{"username":"<USERNAME>","password":"<PASSWORD>"}'
+    headers:
+      User-Agent:
+      - PriceHubbleGem/0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Oct 2019 04:05:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '72'
+      Server:
+      - nginx/1.11.8
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Cookie
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=15768000
+    body:
+      encoding: UTF-8
+      string: '{"access_token": "00000000000000000000000000000000", "expires_in":
+        7200}'
+    http_version: 
+  recorded_at: Wed, 16 Oct 2019 10:00:00 GMT
+- request:
+    method: post
+    uri: https://api.pricehubble.com/api/v1/valuation/property_value?access_token=00000000000000000000000000000000
+    body:
+      encoding: UTF-8
+      string: '{"dealType":"sale","valuationDates":["2019-10-16"],"valuationInputs":[{"property":{"location":{"address":{"postCode":"22769","city":"Hamburg","street":"Stresemannstr.","houseNumber":"29"}},"propertyType":{"code":"apartment","subcode":"apartment_normal"},"buildingYear":1990,"livingArea":200,"balconyArea":30,"floorNumber":1,"hasLift":true,"isFurnished":false,"isNew":false,"renovationYear":2014,"condition":{"bathrooms":"well_maintained","kitchen":"well_maintained","flooring":"well_maintained","windows":"well_maintained","masonry":"well_maintained"},"quality":{"bathrooms":"normal","kitchen":"normal","flooring":"normal","windows":"normal","masonry":"normal"}}}],"returnScores":false,"countryCode":"DE"}'
+    headers:
+      User-Agent:
+      - PriceHubbleGem/0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Oct 2019 04:05:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '349'
+      Server:
+      - gunicorn/19.6.0
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=15768000
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "valuations": [
+            [
+              {
+                "confidence": "good",
+                "currency": "EUR",
+                "salePrice": 1313700,
+                "salePriceRange": {
+                  "lower": 1208600,
+                  "upper": 1418800
+                },
+                "value": 1313700,
+                "valueRange": {
+                  "lower": 1208600,
+                  "upper": 1418800
+                }
+              }
+            ]
+          ]
+        }
+    http_version: 
+  recorded_at: Wed, 16 Oct 2019 10:00:00 GMT
+recorded_with: VCR 3.0.3
