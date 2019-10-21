@@ -65,8 +65,11 @@ PriceHubble.configure do |conf|
   # endpoint we know about)
   conf.base_url = 'https://api.pricehubble.com'
 
-  # Writes to stdout by default
+  # Writes to stdout by default, or use the Rails logger if present
   conf.logger = Logger.new(IO::NULL)
+
+  # Enable request logging or not
+  conf.request_logging = true
 end
 ```
 
