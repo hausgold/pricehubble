@@ -22,5 +22,8 @@ module PriceHubble
 
       Logger.new($stdout)
     end
+
+    # Enable request logging or not
+    config_accessor(:request_logging) { true }
   end
 end

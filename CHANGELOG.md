@@ -1,3 +1,11 @@
+### 0.2.0
+
+* Added a configuration for request logging which is enabled by default now
+* Implemented a generic instrumentation facility
+* Improved the instrumentation and request logging facility (logs are colored
+  now to make local development easier and error handling was added to be more
+  robust on response issues)
+
 ### 0.1.0
 
 * Implemented a transparent authentication handling

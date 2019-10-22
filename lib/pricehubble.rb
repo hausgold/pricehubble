@@ -25,6 +25,7 @@ module PriceHubble
   autoload :ConfigurationHandling, 'pricehubble/configuration_handling'
   autoload :Client, 'pricehubble/client'
   autoload :Identity, 'pricehubble/identity'
+  autoload :Instrumentation, 'pricehubble/instrumentation'
 
   # Entities
   autoload :BaseEntity, 'pricehubble/entity/base_entity'
@@ -44,6 +45,11 @@ module PriceHubble
   module Utils
     autoload :Decision, 'pricehubble/utils/decision'
     autoload :Bangers, 'pricehubble/utils/bangers'
+  end
+
+  # Instrumentation
+  module Instrumentation
+    autoload :LogSubscriber, 'pricehubble/instrumentation/log_subscriber'
   end
 
   # Dedicated application HTTP (low level) client
@@ -100,4 +106,5 @@ module PriceHubble
   include PriceHubble::ConfigurationHandling
   include PriceHubble::Client
   include PriceHubble::Identity
+  include PriceHubble::Instrumentation
 end

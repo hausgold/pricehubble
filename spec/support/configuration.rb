@@ -12,6 +12,7 @@ def reset_test_configuration!
   PriceHubble.reset_identity!
   PriceHubble.configure do |conf|
     conf.logger = Logger.new(IO::NULL)
+    conf.request_logging = false
     conf.username ||= '<USERNAME>'
     conf.password ||= '<PASSWORD>'
 
