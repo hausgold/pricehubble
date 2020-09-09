@@ -1,8 +1,8 @@
 ### 0.3.0
 
-* Dropped support for Rails <5.2
-* Dropped support for Ruby <2.5
-* Updated the faraday gem spec to `~> 1.0` (#)
+* Dropped support for Rails <5.2 (#2)
+* Dropped support for Ruby <2.5 (#2)
+* Updated the faraday gem spec to `~> 1.0` (#2)
 
 ### 0.2.0
 
