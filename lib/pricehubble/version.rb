@@ -2,5 +2,5 @@
 
 module PriceHubble
   # The version of the +price-hubble+ gem
-  VERSION = '0.2.0'
+  VERSION = '0.3.0'
 end

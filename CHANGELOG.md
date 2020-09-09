@@ -1,4 +1,4 @@
-### next
+### 0.3.0
 
 * Dropped support for Rails <5.2
 * Dropped support for Ruby <2.5
