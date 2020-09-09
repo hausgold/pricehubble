@@ -28,6 +28,7 @@ XARGS ?= xargs
 # Container binaries
 BUNDLE ?= bundle
 APPRAISAL ?= appraisal
+GEM ?= gem
 RAKE ?= rake
 YARD ?= yard
 RAKE ?= rake
@@ -75,6 +76,8 @@ install:
 	# Install the dependencies
 	@$(MKDIR) -p $(VENDOR_DIR)
 	@$(call run-shell,$(BUNDLE) check || $(BUNDLE) install --path $(VENDOR_DIR))
+	@$(call run-shell,GEM_HOME=vendor/bundle/ruby/$${RUBY_MAJOR}.0 \
+		$(GEM) install bundler -v "~> 1.0")
 	@$(call run-shell,$(BUNDLE) exec $(APPRAISAL) install)
 
 update: install
@@ -116,7 +119,7 @@ endif
 clean-images:
 	# Clean build images
 ifeq ($(MAKE_ENV),docker)
-	@-$(DOCKER) images | $(GREP) price-hubble \
+	@-$(DOCKER) images | $(GREP) pricehubble \
 		| $(AWK) '{ print $$3 }' \
 		| $(XARGS) -rn1 $(DOCKER) rmi -f
 endif

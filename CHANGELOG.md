@@ -1,3 +1,9 @@
+### next
+
+* Dropped support for Rails <5.2
+* Dropped support for Ruby <2.5
+* Updated the faraday gem spec to `~> 1.0` (#)
+
 ### 0.2.0
 
 * Added a configuration for request logging which is enabled by default now
