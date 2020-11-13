@@ -18,7 +18,7 @@ module PriceHubble
 
             # By definition empty responses (HTTP status 204)
             # or actual empty bodies should be an empty hash
-            body = {} if res[:status] == 204 || res[:body].empty?
+            body = {} if res[:status] == 204 || res[:body].blank?
 
             # Looks like we have some actual data we can wrap
             res[:body] = \

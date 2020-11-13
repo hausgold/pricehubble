@@ -1,3 +1,7 @@
+### next
+
+* Added initial dossier handling (create, delete, sharing link) (#3)
+
 ### 0.3.0
 
 * Dropped support for Rails <5.2 (#2)

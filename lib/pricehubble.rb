@@ -40,6 +40,7 @@ module PriceHubble
   autoload :Location, 'pricehubble/entity/location'
   autoload :Address, 'pricehubble/entity/address'
   autoload :Coordinates, 'pricehubble/entity/coordinates'
+  autoload :Dossier, 'pricehubble/entity/dossier'
 
   # Some general purpose utilities
   module Utils
@@ -77,6 +78,7 @@ module PriceHubble
     autoload :Base, 'pricehubble/client/base'
     autoload :Authentication, 'pricehubble/client/authentication'
     autoload :Valuation, 'pricehubble/client/valuation'
+    autoload :Dossiers, 'pricehubble/client/dossiers'
   end
 
   # Separated features of an entity instance
@@ -85,6 +87,7 @@ module PriceHubble
     autoload :Attributes, 'pricehubble/entity/concern/attributes'
     autoload :Associations, 'pricehubble/entity/concern/associations'
     autoload :Client, 'pricehubble/entity/concern/client'
+    autoload :Persistence, 'pricehubble/entity/concern/persistence'
 
     # Some custom typed attribute helpers
     module Attributes

@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pricehubble.com/auth/login/credentials
+    body:
+      encoding: UTF-8
+      string: '{"username":"<USERNAME>","password":"<PASSWORD>"}'
+    headers:
+      User-Agent:
+      - PriceHubbleGem/0.3.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 10 Dec 2020 12:19:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '72'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Cookie
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: '{"access_token": "00000000000000000000000000000000", "expires_in":
+        7200}'
+    http_version:
+  recorded_at: Thu, 10 Dec 2020 12:19:42 GMT
+- request:
+    method: post
+    uri: https://api.pricehubble.com/api/v1/dossiers/links?access_token=00000000000000000000000000000000
+    body:
+      encoding: UTF-8
+      string: '{"dossierId":"301785bc-ec45-4183-ae58-48abd2a0f1d0","daysToLive":365,"countryCode":"DE","locale":"de_CH"}'
+    headers:
+      User-Agent:
+      - PriceHubbleGem/0.3.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 10 Dec 2020 12:19:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '380'
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - istio-envoy
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "68b5f284-2575-4dbb-9189-6bfb38cbed8e",
+          "url": "https://dash.pricehubble.com/shared/dossier/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaGFyZUlkIjoiNjhiNWYyODQtMjU3NS00ZGJiLTkxODktNmJmYjM4Y2JlZDhlIiwic2hhcmVUeXBlIjoidmFsdWF0aW9uIiwiY3JlYXRlZEJ5IjoxNzMzLCJjcmVhdGVkQnlPcmciOjcxOCwibG9jYWxlIjoiZGVfQ0giLCJpYXQiOjE2MDc2MDI3ODN9.AXHir7-hb-HSTYDRl161UHGpAfL3M1hcU0FxZiCzbrc"
+        }
+    http_version:
+  recorded_at: Thu, 10 Dec 2020 12:19:43 GMT
+recorded_with: VCR 3.0.3

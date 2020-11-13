@@ -4,6 +4,8 @@ module PriceHubble
   module Client
     module Utils
       # Some helpers to work with responses in a general way.
+      #
+      # rubocop:disable Metrics/BlockLength because of ActiveSupport::Concern
       module Response
         extend ActiveSupport::Concern
 
@@ -53,8 +55,33 @@ module PriceHubble
               PriceHubble::RequestError.new(nil, res)
             end
           end
+
+          # Perform the assignment of the response to the given entity. This
+          # allows a clean usage of the decision flow control for successful
+          # requests. Here comes an example:
+          #
+          #   decision do |result|
+          #     result.good(&assign_entity(entity, res))
+          #   end
+          #
+          # @param entity [Hausgold::BaseEntity] the entity instance to handle
+          # @param res [Faraday::Response] the response object
+          # @return [Proc] the proc which performs the entity handling
+          def assign_entity(entity, res, &block)
+            lambda do
+              entity.assign_attributes(res.body.to_h)
+              entity.send(:changes_applied)
+              # We need to call +#changed?+ - the +@mutations_from_database+ is
+              # unset and this causes issues on subsequent calls to +#changed?+
+              # after a freeze (eg. when deleted)
+              entity.changed?
+              yield(entity) if block
+              entity
+            end
+          end
         end
       end
+      # rubocop:enable Metrics/BlockLength
     end
   end
 end
