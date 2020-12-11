@@ -1,4 +1,4 @@
-### next
+### 0.4.0
 
 * Added initial dossier handling (create, delete, sharing link) (#3)
 
