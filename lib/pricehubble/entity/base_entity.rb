@@ -17,6 +17,7 @@ module PriceHubble
     include PriceHubble::EntityConcern::Attributes
     include PriceHubble::EntityConcern::Associations
     include PriceHubble::EntityConcern::Client
+    include PriceHubble::EntityConcern::Persistence
 
     # We collect all unknown attributes instead of raising while creating a new
     # instance. The unknown attributes are wrapped inside a

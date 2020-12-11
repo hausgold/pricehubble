@@ -25,6 +25,7 @@ so feel free to send a pull request.
     - [Use the PriceHubble::Valuation representation](#use-the-pricehubblevaluation-representation)
     - [Error Handling](#error-handling-1)
     - [Advanced Request Examples](#advanced-request-examples)
+  - [Dossiers](#dossiers)
 - [Development](#development)
 - [Contributing](#contributing)
 
@@ -368,6 +369,56 @@ end
 # => | sale      | apartment     | 1282100 EUR | 1373100 EUR | 1420100 EUR |
 # => | sale      | house         | 1824800 EUR | 1950900 EUR | 2016000 EUR |
 # => +-----------+---------------+-------------+-------------+-------------+
+```
+
+### Dossiers
+
+The pricehubble gem allows you to create and delete dossiers for properties.
+The required property data is equal to the valuation request. Additionally the
+pricehubble gem allows you to create sharing links (permalinks) which will link
+to the dossier dashboard application for customers.
+
+**Gotcha!** The API allows to update and search for dossiers. Additionally the
+API supports images and logos for dossiers. The pricehubble gem does not
+support this yet.
+
+```ruby
+# The property to create a dossier for
+apartment = {
+  location: {
+    address: {
+      post_code: '22769',
+      city: 'Hamburg',
+      street: 'Stresemannstr.',
+      house_number: '29'
+    }
+  },
+  property_type: { code: :apartment },
+  building_year: 1990,
+  living_area: 200
+}
+
+dossier = PriceHubble::Dossier.new(
+  title: 'Customer Dossier for Stresemannstr. 29',
+  description: 'Best apartment in the city',
+  deal_type: :sale,
+  property: apartment,
+  country_code: 'DE',
+  asking_sale_price: 600_000 # the minimum price the seller is willing to agree
+  # valuation_override_sale_price: '', # overwrite the PH value
+  # valuation_override_rent_net: '', # overwrite the PH value
+  # valuation_override_rent_gross: '', # overwrite the PH value
+  # valuation_override_reason_freetext: '' # explain the visitor why
+)
+
+# Save the new dossier
+pp dossier.save!
+pp dossier.id
+# => "25de5429-244e-4584-b58e-b0d7428a2377"
+
+# Generate a sharing link for the dossier
+pp dossier.link
+# => "https://dash.pricehubble.com/shared/dossier/eyJ0eXAiOiJ..."
 ```
 
 ## Development
