@@ -149,4 +149,4 @@ stats: install
 
 release:
 	# Release a new gem version
-	@$(RAKE) release
+	@$(BUNDLE) exec $(RAKE) release
