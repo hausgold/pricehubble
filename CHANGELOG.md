@@ -1,3 +1,7 @@
+### 0.4.1
+
+* Corrected the GNU Make release target
+
 ### 0.4.0
 
 * Added initial dossier handling (create, delete, sharing link) (#3)
