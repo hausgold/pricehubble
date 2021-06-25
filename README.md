@@ -1,6 +1,6 @@
 ![PriceHubble](doc/assets/project.svg)
 
-[![Build Status](https://travis-ci.com/hausgold/pricehubble.svg?token=4XcyqxxmkyBSSV3wWRt7&branch=master)](https://travis-ci.com/hausgold/pricehubble)
+[![Continuous Integration](https://github.com/hausgold/pricehubble/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/hausgold/pricehubble/actions/workflows/test.yml)
 [![Gem Version](https://badge.fury.io/rb/pricehubble.svg)](https://badge.fury.io/rb/pricehubble)
 [![Maintainability](https://api.codeclimate.com/v1/badges/cd15f59fc84566e4b200/maintainability)](https://codeclimate.com/repos/5da572bd60163201b800c255/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cd15f59fc84566e4b200/test_coverage)](https://codeclimate.com/repos/5da572bd60163201b800c255/test_coverage)
