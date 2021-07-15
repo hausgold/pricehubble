@@ -2,9 +2,9 @@
 
 [![Continuous Integration](https://github.com/hausgold/pricehubble/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/hausgold/pricehubble/actions/workflows/test.yml)
 [![Gem Version](https://badge.fury.io/rb/pricehubble.svg)](https://badge.fury.io/rb/pricehubble)
-[![Maintainability](https://api.codeclimate.com/v1/badges/cd15f59fc84566e4b200/maintainability)](https://codeclimate.com/repos/5da572bd60163201b800c255/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/cd15f59fc84566e4b200/test_coverage)](https://codeclimate.com/repos/5da572bd60163201b800c255/test_coverage)
-[![API docs](https://img.shields.io/badge/docs-API-blue.svg)](https://www.rubydoc.info/gems/pricehubble)
+[![Test Coverage](https://automate-api.hausgold.de/v1/coverage_reports/pricehubble/coverage.svg)](https://knowledge.hausgold.de/coverage)
+[![Test Ratio](https://automate-api.hausgold.de/v1/coverage_reports/pricehubble/ratio.svg)](https://knowledge.hausgold.de/coverage)
+[![API docs](https://automate-api.hausgold.de/v1/coverage_reports/pricehubble/documentation.svg)](https://www.rubydoc.info/gems/pricehubble)
 
 This project is dedicated to build a client/API wrapper around the
 [PriceHubble](https://pricehubble.com) REST API. It follows strictly the

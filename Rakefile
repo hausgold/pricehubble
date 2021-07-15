@@ -54,16 +54,21 @@ end
 
 # Configure all code statistics directories
 vendors = [
-  [:unshift, 'Clients', 'lib/pricehubble/client'],
-  [:unshift, 'Entities', 'lib/pricehubble/entity'],
-  [:unshift, 'Utilities', 'lib/pricehubble/utils'],
   [:unshift, 'Top-levels', 'lib', %r{lib(/pricehubble)?/[^/]+\.rb$}],
-
-  [:unshift, 'Clients specs', 'spec/client'],
-  [:unshift, 'Entities specs', 'spec/entity'],
-  [:unshift, 'Utilities specs', 'spec/utils'],
   [:unshift, 'Top-levels specs', 'spec',
-   %r{spec/pricehubble(_spec\.rb|/[^/]+\.rb$)}]
+   %r{spec/pricehubble(_spec\.rb|/[^/]+\.rb$)}],
+
+  [:unshift, 'Clients', 'lib/pricehubble/client'],
+  [:unshift, 'Clients specs', 'spec/client'],
+
+  [:unshift, 'Entities', 'lib/pricehubble/entity'],
+  [:unshift, 'Entities specs', 'spec/entity'],
+
+  [:unshift, 'Utilities', 'lib/pricehubble/utils'],
+  [:unshift, 'Utilities specs', 'spec/utils'],
+
+  [:unshift, 'Instrumentation', 'lib/pricehubble/instrumentation'],
+  [:unshift, 'Core Extensions', 'lib/pricehubble/core_ext']
 ].reverse
 
 vendors.each do |method, type, dir, pattern|
