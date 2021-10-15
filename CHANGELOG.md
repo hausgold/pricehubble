@@ -1,3 +1,9 @@
+### 0.4.2
+
+* Migrated to Github Actions
+* Migrated to our own coverage reporting
+* Added the code statistics to the test process
+
 ### 0.4.1
 
 * Corrected the GNU Make release target
