@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe PriceHubble::Client do
   let(:described_class) { PriceHubble }
 

@@ -12,8 +12,9 @@ module PriceHubble
       #   or +nil+ on error
       #
       # rubocop:disable Metrics/MethodLength because of the request handling
+      # rubocop:disable Metrics/AbcSize dito
       def property_value(request, **args)
-        data = request.attributes(true)
+        data = request.attributes(sanitize: true)
         res = connection.post do |req|
           req.path = '/api/v1/valuation/property_value'
           req.body = data
@@ -27,6 +28,7 @@ module PriceHubble
         end
       end
       # rubocop:enable Metrics/MethodLength
+      # rubocop:enable Metrics/AbcSize
 
       # Map and assign the valuation response to our local
       # +PriceHubble::Valuation+ representation. While taking care of the
@@ -42,6 +44,7 @@ module PriceHubble
       #
       # rubocop:disable Metrics/MethodLength because of the request
       #   to response mapping
+      # rubocop:disable Metrics/AbcSize dito
       def assign_valuations(data, request)
         lambda do
           # valuations[i][j] contains the valuation for property i on date j
@@ -60,6 +63,7 @@ module PriceHubble
         end
       end
       # rubocop:enable Metrics/MethodLength
+      # rubocop:enable Metrics/AbcSize
 
       # Generate bang method variants
       bangers :property_value

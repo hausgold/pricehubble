@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe PriceHubble::Dossier do
   let(:instance) { build(:dossier) }
   let(:existing_id) { '301785bc-ec45-4183-ae58-48abd2a0f1d0' }

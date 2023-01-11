@@ -13,7 +13,6 @@ require 'active_model'
 require 'recursive-open-struct'
 require 'faraday'
 require 'faraday_middleware'
-require 'pp'
 
 # Load polyfills if needed
 require 'pricehubble/core_ext/hash'

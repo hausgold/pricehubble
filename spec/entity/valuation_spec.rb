@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe PriceHubble::Valuation do
   let(:instance) { build(:valuation) }
 
@@ -38,7 +40,7 @@ RSpec.describe PriceHubble::Valuation do
         end
 
         it 'returns nil when underlying data is missing' do
-          expect(instance.rent_gross_range).to be(nil)
+          expect(instance.rent_gross_range).to be_nil
         end
       end
     end
@@ -64,7 +66,7 @@ RSpec.describe PriceHubble::Valuation do
         let(:params) { { sale_price: nil } }
 
         it 'returns nil' do
-          expect(instance.value).to be(nil)
+          expect(instance.value).to be_nil
         end
       end
     end
@@ -84,7 +86,7 @@ RSpec.describe PriceHubble::Valuation do
         let(:params) { { rent_gross_range: nil } }
 
         it 'returns nil' do
-          expect(instance.value).to be(nil)
+          expect(instance.value).to be_nil
         end
       end
     end
@@ -110,7 +112,7 @@ RSpec.describe PriceHubble::Valuation do
         let(:params) { { sale_price_range: nil } }
 
         it 'returns nil' do
-          expect(instance.value_range).to be(nil)
+          expect(instance.value_range).to be_nil
         end
       end
     end
@@ -130,7 +132,7 @@ RSpec.describe PriceHubble::Valuation do
         let(:params) { { rent_gross_range: nil } }
 
         it 'returns nil' do
-          expect(instance.value_range).to be(nil)
+          expect(instance.value_range).to be_nil
         end
       end
     end

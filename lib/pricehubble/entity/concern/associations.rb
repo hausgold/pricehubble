@@ -45,8 +45,8 @@ module PriceHubble
           key = opts[:from]
 
           # Initialize an object on the association, even without data
-          if opts[:initialize] && send(attribute).nil?
-            hash[key] = {} unless hash.key? key
+          if opts[:initialize] && send(attribute).nil? && !(hash.key? key)
+            hash[key] = {}
           end
 
           return [struct, hash] unless hash.key? key
@@ -92,8 +92,8 @@ module PriceHubble
           key = opts[:fallback_from] if opts[:fallback_from] && !hash.key?(key)
 
           # Initialize an empty array on the association
-          if opts[:initialize] && send(attribute).nil?
-            hash[key] = [] unless hash.key? key
+          if opts[:initialize] && send(attribute).nil? && !(hash.key? key)
+            hash[key] = []
           end
 
           return [struct, hash] unless hash.key? key
@@ -156,6 +156,7 @@ module PriceHubble
           associations[entity] = opts
           # Generate getters and setters
           attr_accessor entity
+
           # Add the entity to the tracked attributes if it should be persisted
           tracked_attr entity if opts[:persist]
         end
@@ -187,6 +188,7 @@ module PriceHubble
           associations[entity] = opts
           # Generate getters and setters
           attr_accessor entity
+
           # Add the entity to the tracked attributes if it should be persisted
           tracked_attr entity if opts[:persist]
         end

@@ -65,8 +65,7 @@ module PriceHubble
       # @param entity [PriceHubble::Dossier] the entity to delete
       # @param args [Hash{Symbol => Mixed}] additional arguments
       #
-      # rubocop:disable Metrics/MethodLength because thats the bare minimum
-      # rubocop:disable Metrics/AbcSize because the decission
+      # rubocop:disable Metrics/MethodLength because thats the bare minimumbecause the decission
       #  handling is quite complex
       def delete_dossier(entity, **args)
         res = connection.delete do |req|
@@ -82,9 +81,8 @@ module PriceHubble
           successful?(res)
         end
       end
-      # rubocop:enable Metrics/MethodLength
-      # rubocop:enable Metrics/AbcSize
 
+      # rubocop:enable Metrics/MethodLength
       # Update a dossier entity.
       #
       # TODO: Implement this.

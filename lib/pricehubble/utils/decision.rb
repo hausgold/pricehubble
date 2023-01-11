@@ -49,7 +49,7 @@ module PriceHubble
         def initialize(on_error: :fail)
           @on_error = on_error
           @bang_proc = -> { StandardError.new }
-          @fail_proc = @good_proc = -> { nil }
+          @fail_proc = @good_proc = -> {}
         end
 
         # Register a new error (bang) way. Requires a block.

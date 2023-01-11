@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :property, class: PriceHubble::Property do
+  factory :property, class: 'PriceHubble::Property' do
     location { build(:location) }
     property_type { build(:property_type) }
     building_year { 1990 }
@@ -18,14 +18,14 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
-  factory :property_type, class: PriceHubble::PropertyType do
+  factory :property_type, class: 'PriceHubble::PropertyType' do
     code { :apartment }
     subcode { :apartment_normal }
   end
 end
 
 FactoryBot.define do
-  factory :property_conditions, class: PriceHubble::PropertyConditions do
+  factory :property_conditions, class: 'PriceHubble::PropertyConditions' do
     bathrooms { :well_maintained }
     kitchen { :well_maintained }
     flooring { :well_maintained }
@@ -35,7 +35,7 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
-  factory :property_qualities, class: PriceHubble::PropertyQualities do
+  factory :property_qualities, class: 'PriceHubble::PropertyQualities' do
     bathrooms { :normal }
     kitchen { :normal }
     flooring { :normal }

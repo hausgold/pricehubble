@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe PriceHubble::ValuationRequest do
   let(:instance) { build(:valuation_request) }
 
@@ -30,7 +32,7 @@ RSpec.describe PriceHubble::ValuationRequest do
           'deal_type' => :sale,
           'valuation_dates' => ['2019-10-16'],
           'valuation_inputs' => [
-            { property: build(:property).attributes(true) }
+            { property: build(:property).attributes(sanitize: true) }
           ],
           'return_scores' => false,
           'country_code' => 'DE'
@@ -38,7 +40,7 @@ RSpec.describe PriceHubble::ValuationRequest do
       end
 
       it 'serializes the correct data' do
-        expect(instance.attributes(true)).to be_eql(expected)
+        expect(instance.attributes(sanitize: true)).to be_eql(expected)
       end
     end
 

@@ -6,6 +6,7 @@ module PriceHubble
   # rubocop:disable Style/ClassVars because we split module code
   module Identity
     extend ActiveSupport::Concern
+
     class_methods do
       # Reset the current identity.
       def reset_identity!

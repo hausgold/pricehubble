@@ -38,8 +38,8 @@ class Hash
   def deep_compact_in_object(object)
     case object
     when Hash
-      object = object.compact.each_with_object({}) do |(key, value), result|
-        result[key] = deep_compact_in_object(value)
+      object = object.compact.transform_values do |value|
+        deep_compact_in_object(value)
       end
       object.empty? ? nil : object.compact
     when Array
