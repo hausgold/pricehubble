@@ -3,7 +3,7 @@
 # The gem version details.
 module PriceHubble
   # The version of the +price-hubble+ gem
-  VERSION = '0.4.2'
+  VERSION = '1.0.0'
 
   class << self
     # Returns the version of gem as a string.
