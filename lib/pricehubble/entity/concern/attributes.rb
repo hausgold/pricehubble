@@ -27,7 +27,7 @@ module PriceHubble
         #
         # rubocop:disable Metrics/MethodLength because of the
         #   key/value sanitization handling
-        def attributes(sanitize = false)
+        def attributes(sanitize: false)
           attribute_names.each_with_object({}) do |key, memo|
             reader = key
 
@@ -43,8 +43,8 @@ module PriceHubble
             memo[key.to_s] = result
           end
         end
-        # rubocop:enable Metrics/MethodLength
 
+        # rubocop:enable Metrics/MethodLength
         # A wrapper for the +ActiveModel#assign_attributes+ method with support
         # for unmapped attributes. These attributes are put into the
         # +_unmapped+ struct and all the known attributes are assigned like
@@ -73,20 +73,26 @@ module PriceHubble
         # @param obj [Mixed] the object to resolve its attributes
         # @param sanitize [Boolean] whenever to sanitize the data for transport
         # @return [Mixed] the attribute(s) data
-        def resolve_attributes(obj, sanitize = false)
+        #
+        # rubocop:disable Metrics/MethodLength because thats the pure minimum
+        def resolve_attributes(obj, sanitize: false)
           if obj.respond_to? :attributes
             obj = if obj.method(:attributes).arity == 1
-                    obj.attributes(sanitize)
+                    obj.attributes(sanitize: sanitize)
                   else
                     obj.attributes
                   end
           end
 
-          obj = obj.map { |elem| resolve_attributes(elem, sanitize) } \
-            if obj.is_a? Array
+          if obj.is_a? Array
+            obj = obj.map do |elem|
+              resolve_attributes(elem, sanitize: sanitize)
+            end
+          end
 
           obj
         end
+        # rubocop:enable Metrics/MethodLength
 
         # Explicitly convert the given struct to an +RecursiveOpenStruct+ and a
         # deep symbolized key copy for further usage.
@@ -144,6 +150,7 @@ module PriceHubble
           self.attribute_names += args
           # Define getters/setters
           attr_reader(*args)
+
           args.each do |arg|
             class_eval <<-RUBY, __FILE__, __LINE__ + 1
               def #{arg}=(value)

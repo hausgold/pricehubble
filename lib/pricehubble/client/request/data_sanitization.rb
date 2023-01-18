@@ -18,7 +18,7 @@ module PriceHubble
           # Perform the data compaction and the hash key transformation,
           # when the body is available and a hash
           env[:body] = body.deep_compact.deep_camelize_keys \
-            if body&.is_a?(Hash)
+            if body.is_a?(Hash)
 
           @app.call(env)
         end

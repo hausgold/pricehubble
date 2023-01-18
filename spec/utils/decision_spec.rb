@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe PriceHubble::Utils::Decision do
   let(:test_class) { Class.new { include(PriceHubble::Utils::Decision) } }
   let(:instance) { test_class.new }
@@ -60,12 +62,12 @@ RSpec.describe PriceHubble::Utils::Decision do
 
       it 'returns the default result of good block on success' do
         output = instance.decision(bang: false) { true }
-        expect(output).to be(nil)
+        expect(output).to be_nil
       end
 
       it 'returns the default result of fail block on error' do
         output = instance.decision(bang: false) { false }
-        expect(output).to be(nil)
+        expect(output).to be_nil
       end
     end
 
@@ -112,7 +114,7 @@ RSpec.describe PriceHubble::Utils::Decision do
 
       it 'returns the default result of good block on success' do
         output = instance.decision(bang: true) { true }
-        expect(output).to be(nil)
+        expect(output).to be_nil
       end
 
       it 'raises the default error object of bang block on error' do

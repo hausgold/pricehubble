@@ -43,7 +43,7 @@ module PriceHubble
     #
     # @return [Array<Hash{String => Mixed}>] the sanitized properties
     def sanitize_attr_properties
-      properties.map { |prop| { property: prop.attributes(true) } }
+      properties.map { |prop| { property: prop.attributes(sanitize: true) } }
     end
 
     # Perform the property valuation request.

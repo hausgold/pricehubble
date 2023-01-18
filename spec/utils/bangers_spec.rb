@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe PriceHubble::Utils::Bangers do
   let(:test_class) do
     Class.new do

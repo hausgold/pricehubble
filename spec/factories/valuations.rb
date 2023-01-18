@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :valuation, class: PriceHubble::Valuation do
+  factory :valuation, class: 'PriceHubble::Valuation' do
     deal_type { :sale }
     valuation_date { Date.current }
     property { build(:property) }

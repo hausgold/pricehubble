@@ -1,19 +1,24 @@
-require: rubocop-rspec
+require:
+  - rubocop-rspec
+  - rubocop-rails
 
 Rails:
   Enabled: true
 
-Documentation:
+Style/Documentation:
   Enabled: true
 
 AllCops:
+  NewCops: enable
+  SuggestExtensions: false
   DisplayCopNames: true
   TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
   Exclude:
     - bin/**/*
     - vendor/**/*
     - build/**/*
-    - gemfiles/vendor/**/*
+    - gemfiles/**/*
 
 Metrics/BlockLength:
   Exclude:
@@ -26,6 +31,10 @@ Metrics/BlockLength:
     - lib/pricehubble/entity/concern/**/*.rb
     - lib/pricehubble/client/request/**/*.rb
     - lib/pricehubble/client/response/**/*.rb
+
+# MFA is not yet enabled for our gems yet.
+Gemspec/RequireMFA:
+  Enabled: false
 
 # Document all the things.
 Style/DocumentationMethod:
@@ -63,5 +72,20 @@ Lint/ShadowingOuterLocalVariable:
 
 # We stay at 80 characters per line.
 # See: https://rubystyle.guide/#max-line-length
-Metrics/LineLength:
+Layout/LineLength:
   Max: 80
+
+# We use memoized helpers all over the place to construct inputs and output
+# which can be customized at nested contexts easily.
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+# That are false-positives because we implement similar working
+# helpers for associations like +.has_one+.
+Rails/ReflectionClassName:
+  Enabled: false
+
+# A very nice feature, but it does not work for non-method code parts atow.
+# So just disabling it for now.
+Style/DocumentDynamicEvalDefinition:
+  Enabled: false

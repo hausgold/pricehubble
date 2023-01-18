@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe PriceHubble::Property do
   let(:instance) { build(:property) }
 

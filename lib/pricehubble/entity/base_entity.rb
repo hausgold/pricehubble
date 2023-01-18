@@ -55,6 +55,7 @@ module PriceHubble
       #
       # @param child_class [Class] the child class which inherits us
       def inherited(child_class)
+        super
         match = ->(sym) { sym.to_s.start_with? 'inherited_setup_' }
         trigger = ->(sym) { send(sym, child_class) }
         methods.select(&match).each(&trigger)

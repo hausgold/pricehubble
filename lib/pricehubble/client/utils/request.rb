@@ -8,15 +8,15 @@ module PriceHubble
       module Request
         extend ActiveSupport::Concern
 
-        included do
-          # A common HTTP content type to symbol
-          # mapping for correct header settings.
-          CONTENT_TYPE = {
-            json: 'application/json',
-            multipart: 'multipart/form-data',
-            url_encoded: 'application/x-www-form-urlencoded'
-          }.freeze
+        # A common HTTP content type to symbol
+        # mapping for correct header settings.
+        CONTENT_TYPE = {
+          json: 'application/json',
+          multipart: 'multipart/form-data',
+          url_encoded: 'application/x-www-form-urlencoded'
+        }.freeze
 
+        included do
           # Use the configured identity to authenticate the given request.
           #
           # @param req [Faraday::Request] the request to manipulate

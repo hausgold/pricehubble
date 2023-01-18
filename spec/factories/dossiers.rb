@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :dossier, class: PriceHubble::Dossier do
+  factory :dossier, class: 'PriceHubble::Dossier' do
     title { 'My fancy dossier title' }
     description { 'My fancy dossier description' }
     deal_type { :sale }
