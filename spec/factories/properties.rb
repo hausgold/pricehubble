@@ -2,8 +2,11 @@
 
 FactoryBot.define do
   factory :property, class: 'PriceHubble::Property' do
-    location { build(:location) }
-    property_type { build(:property_type) }
+    location { association(:location) }
+    property_type { association(:property_type) }
+    condition { association(:property_conditions) }
+    quality { association(:property_qualities) }
+
     building_year { 1990 }
     living_area { 200 }
     balcony_area { 30 }
@@ -12,8 +15,6 @@ FactoryBot.define do
     is_furnished { false }
     is_new { false }
     renovation_year { 2014 }
-    condition { build(:property_conditions) }
-    quality { build(:property_qualities) }
   end
 end
 

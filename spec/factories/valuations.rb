@@ -2,9 +2,10 @@
 
 FactoryBot.define do
   factory :valuation, class: 'PriceHubble::Valuation' do
+    property { association(:property) }
+
     deal_type { :sale }
     valuation_date { Date.current }
-    property { build(:property) }
     country_code { 'DE' }
     currency { 'EUR' }
     sale_price { 1_313_700 }

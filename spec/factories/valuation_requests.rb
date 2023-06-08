@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :valuation_request, class: 'PriceHubble::ValuationRequest' do
     deal_type { :sale }
     valuation_dates { [Date.current] }
-    properties { [build(:property)] }
+    properties { [association(:property)] }
     return_scores { false }
     country_code { 'DE' }
   end

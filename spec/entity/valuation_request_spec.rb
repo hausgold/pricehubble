@@ -56,7 +56,7 @@ RSpec.describe PriceHubble::ValuationRequest do
 
       context 'with single property attributes' do
         let(:instance) do
-          described_class.new(property: attributes_for(:property))
+          described_class.new(property: build(:property).attributes)
         end
 
         it 'assigns the correct data' do
