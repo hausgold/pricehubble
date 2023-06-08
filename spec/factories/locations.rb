@@ -2,10 +2,10 @@
 
 FactoryBot.define do
   factory :location, class: 'PriceHubble::Location' do
-    address { build(:address) }
+    address { association(:address) }
 
     trait :full do
-      coordinates { build(:coordinates) }
+      coordinates { association(:coordinates) }
     end
   end
 end
