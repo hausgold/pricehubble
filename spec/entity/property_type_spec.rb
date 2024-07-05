@@ -14,13 +14,13 @@ RSpec.describe PriceHubble::PropertyType do
     end
 
     it 'serializes the correct data' do
-      expect(instance.attributes).to be_eql(expected)
+      expect(instance.attributes).to eql(expected)
     end
 
     describe 'custom typed attributes' do
       describe 'enums' do
         it 'allows to set a valid value' do
-          expect(described_class.new(code: :house).code).to be_eql(:house)
+          expect(described_class.new(code: :house).code).to be(:house)
         end
 
         it 'raises an ArgumentError on invalid values' do

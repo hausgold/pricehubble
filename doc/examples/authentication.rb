@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative './config'
+require_relative 'config'
 
 # Fetch the authentication/identity for the first time, subsequent calls
 # to this method will return the cached authentication instance until it

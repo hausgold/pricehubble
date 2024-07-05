@@ -22,7 +22,7 @@ RSpec.describe PriceHubble::ValuationRequest do
       end
 
       it 'serializes the correct data' do
-        expect(instance.attributes).to be_eql(expected)
+        expect(instance.attributes).to eql(expected)
       end
     end
 
@@ -40,7 +40,7 @@ RSpec.describe PriceHubble::ValuationRequest do
       end
 
       it 'serializes the correct data' do
-        expect(instance.attributes(sanitize: true)).to be_eql(expected)
+        expect(instance.attributes(sanitize: true)).to eql(expected)
       end
     end
 
@@ -50,7 +50,7 @@ RSpec.describe PriceHubble::ValuationRequest do
 
         it 'assigns the correct data' do
           expect(instance.properties.first.location.address.street).to \
-            be_eql('Stresemannstr.')
+            eql('Stresemannstr.')
         end
       end
 
@@ -61,7 +61,7 @@ RSpec.describe PriceHubble::ValuationRequest do
 
         it 'assigns the correct data' do
           expect(instance.properties.first.location.address.street).to \
-            be_eql('Stresemannstr.')
+            eql('Stresemannstr.')
         end
       end
 
@@ -71,7 +71,7 @@ RSpec.describe PriceHubble::ValuationRequest do
         end
 
         it 'assigns the correct data' do
-          expect(instance.properties.count).to be_eql(2)
+          expect(instance.properties.count).to be(2)
         end
       end
 
@@ -82,7 +82,7 @@ RSpec.describe PriceHubble::ValuationRequest do
         end
 
         it 'assigns the correct data' do
-          expect(instance.properties.count).to be_eql(2)
+          expect(instance.properties.count).to be(2)
         end
       end
     end

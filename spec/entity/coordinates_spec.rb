@@ -14,7 +14,7 @@ RSpec.describe PriceHubble::Coordinates do
     end
 
     it 'serializes the correct data' do
-      expect(instance.attributes).to be_eql(expected)
+      expect(instance.attributes).to eql(expected)
     end
   end
 end

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative './config'
+require_relative 'config'
 
 # Fetch the valuations for a single property (sale) for today (defaults).
 # This is the bare minimum variant, as a starting point.

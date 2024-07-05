@@ -91,32 +91,32 @@ RSpec.describe PriceHubble::Utils::Bangers do
 
   describe 'argument pass through' do
     it 'passes the arguments correctly (#single)' do
-      expect(instance.single!).to be_eql(bang: true)
+      expect(instance.single!).to eql(bang: true)
     end
 
     it 'passes the arguments correctly (#array)' do
-      expect(instance.array!(1, 2, 3)).to be_eql([1, 2, 3, { bang: true }])
+      expect(instance.array!(1, 2, 3)).to eql([1, 2, 3, { bang: true }])
     end
 
     it 'passes the arguments correctly, no data (#array)' do
-      expect(instance.array!).to be_eql([{ bang: true }])
+      expect(instance.array!).to eql([{ bang: true }])
     end
 
     it 'passes the arguments correctly (#hash)' do
-      expect(instance.hash!(test: true)).to be_eql(bang: true, test: true)
+      expect(instance.hash!(test: true)).to eql(bang: true, test: true)
     end
 
     it 'passes the arguments correctly, no data (#hash)' do
-      expect(instance.hash!).to be_eql(bang: true)
+      expect(instance.hash!).to eql(bang: true)
     end
 
     it 'passes the arguments correctly (#defaults)' do
       expect(instance.defaults!(:something)).to \
-        be_eql([:something, { bang: true }])
+        eql([:something, { bang: true }])
     end
 
     it 'passes the arguments correctly, no data (#defaults)' do
-      expect(instance.defaults!).to be_eql([:test, { bang: true }])
+      expect(instance.defaults!).to eql([:test, { bang: true }])
     end
   end
 end

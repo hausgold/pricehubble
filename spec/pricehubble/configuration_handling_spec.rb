@@ -35,7 +35,7 @@ RSpec.describe PriceHubble::ConfigurationHandling do
 
     it 'returns a hash with the credentials' do
       expect(described_class.identity_params).to \
-        be_eql(username: 'username', password: 'password')
+        eql(username: 'username', password: 'password')
     end
   end
 end
