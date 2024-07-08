@@ -2,6 +2,8 @@
 
 require 'spec_helper'
 
+# rubocop:disable RSpec/SpecFilePathFormat because these classes are specially
+#   mapped to be included in the gem root namespace
 RSpec.describe PriceHubble::Address do
   let(:instance) { build(:address) }
 
@@ -20,3 +22,4 @@ RSpec.describe PriceHubble::Address do
     end
   end
 end
+# rubocop:enable RSpec/SpecFilePathFormat
