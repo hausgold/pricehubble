@@ -21,7 +21,7 @@ module PriceHubble
             body = {} if res[:status] == 204 || res[:body].blank?
 
             # Looks like we have some actual data we can wrap
-            res[:body] = \
+            res[:body] =
               ::RecursiveOpenStruct.new(body, recurse_over_arrays: true)
           end
         end

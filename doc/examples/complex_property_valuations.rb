@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative './config'
+require_relative 'config'
 
 # Build a property with all relevant information for the valuation. This
 # example reflects not the full list of supported fields, [see the API

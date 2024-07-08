@@ -2,6 +2,8 @@
 
 require 'spec_helper'
 
+# rubocop:disable RSpec/SpecFilePathFormat because these classes are specially
+#   mapped to be included in the gem root namespace
 RSpec.describe PriceHubble::Dossier do
   let(:instance) { build(:dossier) }
   let(:existing_id) { '301785bc-ec45-4183-ae58-48abd2a0f1d0' }
@@ -54,3 +56,4 @@ RSpec.describe PriceHubble::Dossier do
     end
   end
 end
+# rubocop:enable RSpec/SpecFilePathFormat

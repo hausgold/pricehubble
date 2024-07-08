@@ -2,6 +2,8 @@
 
 require 'spec_helper'
 
+# rubocop:disable RSpec/SpecFilePathFormat because these classes are specially
+#   mapped to be included in the gem root namespace
 RSpec.describe PriceHubble::Address do
   let(:instance) { build(:address) }
 
@@ -16,7 +18,8 @@ RSpec.describe PriceHubble::Address do
     end
 
     it 'serializes the correct data' do
-      expect(instance.attributes).to be_eql(expected)
+      expect(instance.attributes).to eql(expected)
     end
   end
 end
+# rubocop:enable RSpec/SpecFilePathFormat

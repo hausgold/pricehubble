@@ -144,12 +144,12 @@ module PriceHubble
         def has_one(entity, **args)
           # Sanitize options
           entity = entity.to_sym
-          opts = { class_name: nil, from: entity, persist: false } \
+          opts = { class_name: nil, from: entity, persist: false }
                  .merge(args).merge(type: :has_one)
           # Resolve the given entity to a class name, when no explicit class
           # name was given via options
           if opts[:class_name].nil?
-            opts[:class_name] = \
+            opts[:class_name] =
               entity.to_s.camelcase.prepend('PriceHubble::').constantize
           end
           # Register the association
@@ -176,7 +176,7 @@ module PriceHubble
         def has_many(entity, **args)
           # Sanitize options
           entity = entity.to_sym
-          opts = { class_name: nil, from: entity, persist: false } \
+          opts = { class_name: nil, from: entity, persist: false }
                  .merge(args).merge(type: :has_many)
           # Resolve the given entity to a class name, when no explicit class
           # name was given via options

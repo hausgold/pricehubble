@@ -12,7 +12,7 @@ AllCops:
   NewCops: enable
   SuggestExtensions: false
   DisplayCopNames: true
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
   TargetRailsVersion: 5.2
   Exclude:
     - bin/**/*
@@ -28,9 +28,9 @@ Metrics/BlockLength:
     - '**/*.rake'
     - doc/**/*.rb
     # Concerns and middlewares contain by nature long blocks
-    - lib/pricehubble/entity/concern/**/*.rb
-    - lib/pricehubble/client/request/**/*.rb
-    - lib/pricehubble/client/response/**/*.rb
+    - lib/price*hubble/entity/concern/**/*.rb
+    - lib/price*hubble/client/request/**/*.rb
+    - lib/price*hubble/client/response/**/*.rb
 
 # Our examples use +pp+ a lot
 Lint/Debugger:

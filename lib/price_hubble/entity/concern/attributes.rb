@@ -32,11 +32,11 @@ module PriceHubble
             reader = key
 
             if sanitize
-              sanitizer = "sanitize_attr_#{key}".to_sym
+              sanitizer = :"sanitize_attr_#{key}"
               reader = methods.include?(sanitizer) ? sanitizer : key
 
-              key_sanitizer = "sanitize_attr_key_#{key}".to_sym
-              key = methods.include?(key_sanitizer) ? send(key_sanitizer) : key
+              key_sanitizer = :"sanitize_attr_key_#{key}"
+              key = send(key_sanitizer) if methods.include?(key_sanitizer)
             end
 
             result = resolve_attributes(send(reader))
@@ -124,7 +124,7 @@ module PriceHubble
           # Substract known keys, to move them to the +_unmapped+ variable
           attribute_names.each { |key| struct.delete_field(key) }
           # Merge the previous unmapped struct and the given data
-          self._unmapped = \
+          self._unmapped =
             ::RecursiveOpenStruct.new(_unmapped.to_h.merge(struct.to_h),
                                       recurse_over_arrays: true)
           # Allow mass assignment of known attributes
