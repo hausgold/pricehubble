@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 # rubocop:disable Style/ClassVars because we split module code
-RSpec.describe PriceHubble::ConfigurationHandling do
+RSpec.describe PriceHubble::Identity do
   let(:described_class) { PriceHubble }
 
   before { reset_test_configuration! }
