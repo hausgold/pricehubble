@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Upgraded the `recursive-open-struct` gem to `~> 2.0` (#10)
 
 ### 1.2.5 (15 August 2024)
 
