@@ -22,17 +22,14 @@ module PriceHubble
             raise NoMethodError, "#{self}##{meth} does not exit" \
               unless instance_methods(false).include? meth
 
-            raise ArgumentError, "#{self}##{meth} does not accept arguments" \
-              if instance_method(meth).arity.zero?
+            if instance_method(meth).arity.zero?
+              raise ArgumentError,
+                    "#{self}##{meth} does not accept arguments"
+            end
 
             class_eval <<-RUBY, __FILE__, __LINE__ + 1
-              def #{meth}!(*args)
-                if args.last.is_a? Hash
-                  args.last.merge!(bang: true)
-                else
-                  args.push({ bang: true })
-                end
-                #{meth}(*args)
+              def #{meth}!(*args, **kwargs, &block)
+                #{meth}(*args, **kwargs, bang: true, &block)
               end
             RUBY
           end

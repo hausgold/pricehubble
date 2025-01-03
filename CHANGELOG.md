@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Raised minimum supported Ruby/Rails version to 2.7/6.1 (#11)
 
 ### 1.3.0 (4 October 2024)
 
