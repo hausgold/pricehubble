@@ -26,13 +26,8 @@ module PriceHubble
               if instance_method(meth).arity.zero?
 
             class_eval <<-RUBY, __FILE__, __LINE__ + 1
-              def #{meth}!(*args)
-                if args.last.is_a? Hash
-                  args.last.merge!(bang: true)
-                else
-                  args.push({ bang: true })
-                end
-                #{meth}(*args)
+              def #{meth}!(*args, **kwargs)
+                #{meth}(*args, **kwargs, bang: true)
               end
             RUBY
           end
