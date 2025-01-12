@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PriceHubble
-  module EntityConcern
+  module Concern
     # Map some of the ActiveRecord::Persistence API methods for an entity
     # instance for good compatibility. See: http://bit.ly/2W1rjfF and
     # http://bit.ly/2ARRFYB

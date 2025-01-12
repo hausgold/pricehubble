@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PriceHubble
-  module EntityConcern
+  module Concern
     module Attributes
       # A separated date array typed attribute helper.
       module DateArray

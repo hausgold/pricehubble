@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PriceHubble
-  module EntityConcern
+  module Concern
     # An ActiveRecord-like attribute management feature, with the exception
     # that the attributes are not generated through a schema file, but are
     # defined inline the entity class.

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PriceHubble
-  module EntityConcern
+  module Concern
     # Allow entities to define their low level HTTP client to use.
     module Client
       extend ActiveSupport::Concern

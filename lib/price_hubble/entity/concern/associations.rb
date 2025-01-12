@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PriceHubble
-  module EntityConcern
+  module Concern
     # Allow simple association mappings like ActiveRecord supports (eg.
     # +has_one+, +has_many+).
     module Associations
