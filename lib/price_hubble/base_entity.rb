@@ -13,11 +13,11 @@ module PriceHubble
       include PriceHubble::Utils::Bangers
     end
 
-    include PriceHubble::EntityConcern::Callbacks
-    include PriceHubble::EntityConcern::Attributes
-    include PriceHubble::EntityConcern::Associations
-    include PriceHubble::EntityConcern::Client
-    include PriceHubble::EntityConcern::Persistence
+    include Concern::Callbacks
+    include Concern::Attributes
+    include Concern::Associations
+    include Concern::Client
+    include Concern::Persistence
 
     # We collect all unknown attributes instead of raising while creating a new
     # instance. The unknown attributes are wrapped inside a

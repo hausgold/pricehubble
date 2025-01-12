@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PriceHubble
-  module EntityConcern
+  module Concern
     # Define all the base callbacks of a common entity.
     module Callbacks
       extend ActiveSupport::Concern
