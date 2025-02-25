@@ -14,8 +14,8 @@ module PriceHubble
           # @param values [Array<String, Symbol>] the allowed values
           # @param _args [Hash{Symbol => Mixed}] additional options
           #
-          # rubocop:disable Metrics/MethodLength because of the inline
-          #   meta method definitions
+          # rubocop:disable Metrics/MethodLength -- because of the inline meta
+          #   method definitions
           def typed_attr_enum(name, values:, **_args)
             values = values.map(&:to_sym)
             const_values = "ATTR_#{name.to_s.upcase}"

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-# rubocop:disable Style/ClassVars because we split module code
+# rubocop:disable Style/ClassVars -- because we split module code
 RSpec.describe PriceHubble::Identity do
   let(:described_class) { PriceHubble }
 
@@ -44,7 +44,7 @@ RSpec.describe PriceHubble::Identity do
       end
 
       context 'with unexpired cache' do
-        # rubocop:disable RSpec/IdenticalEqualityAssertion because we want
+        # rubocop:disable RSpec/IdenticalEqualityAssertion -- because we want
         #   to test for memoized results
         it 'caches the authentication' do
           expect(described_class.identity).to be(described_class.identity)

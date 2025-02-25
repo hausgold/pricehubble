@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-# rubocop:disable RSpec/SpecFilePathFormat because these classes are specially
-#   mapped to be included in the gem root namespace
+# rubocop:disable RSpec/SpecFilePathFormat -- because these classes are
+#   specially mapped to be included in the gem root namespace
 RSpec.describe PriceHubble::PropertyType do
   let(:instance) { build(:property_type) }
 

@@ -38,8 +38,8 @@ module PriceHubble
         # @return [Array<RecursiveOpenStruct, Hash{Symbol => Mixed}>] the
         #   left over data
         #
-        # rubocop:disable Metrics/AbcSize because of the complex logic
-        # rubocop:disable Metrics/MethodLength because of the complex logic
+        # rubocop:disable Metrics/AbcSize -- because of the complex logic
+        # rubocop:disable Metrics/MethodLength -- because of the complex logic
         def map_has_one_association(attribute, opts, struct, hash)
           # Early exit when the source key is missing on the given data
           key = opts[:from]
@@ -77,12 +77,12 @@ module PriceHubble
         # @return [Array<RecursiveOpenStruct, Hash{Symbol => Mixed}>] the
         #   left over data
         #
-        # rubocop:disable Metrics/AbcSize because of the complex logic
-        # rubocop:disable Metrics/CyclomaticComplexity because of the
+        # rubocop:disable Metrics/AbcSize -- because of the complex logic
+        # rubocop:disable Metrics/CyclomaticComplexity -- because of the
         #   complex logic
-        # rubocop:disable Metrics/PerceivedComplexity because of the
-        #   complex logic
-        # rubocop:disable Metrics/MethodLength because of the complex logic
+        # rubocop:disable Metrics/PerceivedComplexity -- because of the complex
+        #   logic
+        # rubocop:disable Metrics/MethodLength -- because of the complex logic
         def map_has_many_association(attribute, opts, struct, hash)
           # Early exit when the source key is missing on the given data
           key = opts[:from]
@@ -120,8 +120,8 @@ module PriceHubble
         # rubocop:enable Metrics/MethodLength
       end
 
-      # rubocop:disable Naming/PredicateName because we follow
-      #   known naming conventions
+      # rubocop:disable Naming/PredicateName -- because we follow known naming
+      #   conventions
       class_methods do
         # Initialize the associations structures on an inherited class.
         #

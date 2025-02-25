@@ -24,7 +24,7 @@ module PriceHubble
       #
       # @param con [Faraday::Connection] the connection object
       #
-      # rubocop:disable Metrics/MethodLength because of the middleware list
+      # rubocop:disable Metrics/MethodLength -- because of the middleware list
       def configure(con)
         con.use :instrumentation
 
