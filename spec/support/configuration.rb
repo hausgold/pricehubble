@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-# rubocop:disable Style/GlobalVars just for the RSpec test suite
+# rubocop:disable Style/GlobalVars -- just for the RSpec test suite
 $yelled = false
 
 # Set the gem configuration according to the test suite.
 #
-# rubocop:disable Metrics/MethodLength because of the extra warnings
-# rubocop:disable Metrics/AbcSize because of the credentials handling
+# rubocop:disable Metrics/MethodLength -- because of the extra warnings
+# rubocop:disable Metrics/AbcSize -- because of the credentials handling
 def reset_test_configuration!
   PriceHubble.reset_configuration!
   PriceHubble.reset_identity!

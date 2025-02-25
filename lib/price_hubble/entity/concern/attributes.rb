@@ -25,8 +25,8 @@ module PriceHubble
         # @param sanitize [Boolean] whenever to sanitize the data for transport
         # @return [Hash{String => Mixed}] the attribute data
         #
-        # rubocop:disable Metrics/MethodLength because of the
-        #   key/value sanitization handling
+        # rubocop:disable Metrics/MethodLength -- because of the key/value
+        #   sanitization handling
         def attributes(sanitize: false)
           attribute_names.each_with_object({}) do |key, memo|
             reader = key
@@ -74,7 +74,8 @@ module PriceHubble
         # @param sanitize [Boolean] whenever to sanitize the data for transport
         # @return [Mixed] the attribute(s) data
         #
-        # rubocop:disable Metrics/MethodLength because thats the pure minimum
+        # rubocop:disable Metrics/MethodLength -- because thats the pure
+        #   minimum
         def resolve_attributes(obj, sanitize: false)
           if obj.respond_to? :attributes
             obj = if obj.method(:attributes).arity == 1
