@@ -12,7 +12,7 @@ module PriceHubble
       #   or +nil+ on error
       #
       # rubocop:disable Metrics/MethodLength -- because of the request handling
-      # rubocop:disable Metrics/AbcSize -- dito
+      # rubocop:disable Metrics/AbcSize -- ditto
       def property_value(request, **args)
         data = request.attributes(sanitize: true)
         res = connection.post do |req|
@@ -44,7 +44,7 @@ module PriceHubble
       #
       # rubocop:disable Metrics/MethodLength -- because of the request to
       #   response mapping
-      # rubocop:disable Metrics/AbcSize -- dito
+      # rubocop:disable Metrics/AbcSize -- ditto
       def assign_valuations(data, request)
         lambda do
           # valuations[i][j] contains the valuation for property i on date j
