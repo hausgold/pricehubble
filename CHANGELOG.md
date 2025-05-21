@@ -1,7 +1,11 @@
 ### next
 
-* Corrected some RuboCop glitches (#15)
-* Upgraded the rubocop dependencies (#16)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 1.6.1 (21 May 2025)
+
+* Corrected some RuboCop glitches ([#15](https://github.com/hausgold/pricehubble/pull/15))
+* Upgraded the rubocop dependencies ([#16](https://github.com/hausgold/pricehubble/pull/16))
 
 ### 1.6.0 (30 January 2025)
 
