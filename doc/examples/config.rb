@@ -20,6 +20,7 @@ if ENV['PRICEHUBBLE_PASSWORD'].blank?
   puts '> [ERR] Environment variable `PRICEHUBBLE_PASSWORD` is missing.'
 end
 
+# rubocop:disable Rails/Exit -- because we're not in a Rails application here
 if errors
   puts
   puts '> Usage:'
@@ -28,3 +29,4 @@ if errors
   puts ">   $ #{$PROGRAM_NAME} #{ARGV.join(' ')}"
   exit
 end
+# rubocop:enable Rails/Exit

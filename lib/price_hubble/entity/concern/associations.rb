@@ -120,8 +120,6 @@ module PriceHubble
         # rubocop:enable Metrics/MethodLength
       end
 
-      # rubocop:disable Naming/PredicateName -- because we follow known naming
-      #   conventions
       class_methods do
         # Initialize the associations structures on an inherited class.
         #
@@ -141,6 +139,9 @@ module PriceHubble
         #
         # @param entity [String, Symbol] the attribute/entity name
         # @param args [Hash{Symbol => Mixed}] additional options
+        #
+        # rubocop:disable Naming/PredicatePrefix -- because we mimic the
+        #   ActiveRecord API here
         def has_one(entity, **args)
           # Sanitize options
           entity = entity.to_sym
@@ -160,6 +161,7 @@ module PriceHubble
           # Add the entity to the tracked attributes if it should be persisted
           tracked_attr entity if opts[:persist]
         end
+        # rubocop:enable Naming/PredicatePrefix
 
         # Define a simple +has_many+ association.
         #
@@ -173,6 +175,9 @@ module PriceHubble
         #
         # @param entity [String, Symbol] the attribute/entity name
         # @param args [Hash{Symbol => Mixed}] additional options
+        #
+        # rubocop:disable Naming/PredicatePrefix -- because we mimic the
+        #   ActiveRecord API here
         def has_many(entity, **args)
           # Sanitize options
           entity = entity.to_sym
@@ -192,8 +197,8 @@ module PriceHubble
           # Add the entity to the tracked attributes if it should be persisted
           tracked_attr entity if opts[:persist]
         end
+        # rubocop:enable Naming/PredicatePrefix
       end
-      # rubocop:enable Naming/PredicateName
     end
   end
 end

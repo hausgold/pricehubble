@@ -7,11 +7,14 @@ RSpec.describe PriceHubble::Utils::Bangers do
     Class.new do
       include PriceHubble::Utils::Bangers
 
+      # rubocop:disable Naming/PredicateMethod -- because this method performs
+      #   an action, not a predicate check (bool is for error signaling)
       def test(bang: false, **_args)
         raise StandardError, 'test' if bang
 
         false
       end
+      # rubocop:enable Naming/PredicateMethod
 
       def noop; end
 
