@@ -94,3 +94,9 @@ Rails/ReflectionClassName:
 # So just disabling it for now.
 Style/DocumentDynamicEvalDefinition:
   Enabled: false
+
+# For our examples it's fine to use +pp+ and +puts+,
+# as they are living examples.
+Rails/Output:
+  Exclude:
+    - doc/examples/**/*

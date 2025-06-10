@@ -7,6 +7,7 @@ $yelled = false
 #
 # rubocop:disable Metrics/MethodLength -- because of the extra warnings
 # rubocop:disable Metrics/AbcSize -- because of the credentials handling
+# rubocop:disable Rails/Output -- because we want to write to stdout here
 def reset_test_configuration!
   PriceHubble.reset_configuration!
   PriceHubble.reset_identity!
@@ -42,3 +43,4 @@ end
 # rubocop:enable Metrics/AbcSize
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Style/GlobalVars
+# rubocop:enable Rails/Output
