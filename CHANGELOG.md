@@ -1,7 +1,11 @@
 ### next
 
-* Corrected some RuboCop glitches (#17)
-* Drop Ruby 2 and end of life Rails (<7.1) (#18)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.0.0 (28 June 2025)
+
+* Corrected some RuboCop glitches ([#17](https://github.com/hausgold/pricehubble/pull/17))
+* Drop Ruby 2 and end of life Rails (<7.1) ([#18](https://github.com/hausgold/pricehubble/pull/18))
 
 ### 1.6.1 (21 May 2025)
 
