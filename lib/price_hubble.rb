@@ -43,10 +43,10 @@ module PriceHubble
   require 'price_hubble/railtie' if defined? Rails
 
   # Load all core extension of the gem
-  Dir[root_path.join('core_ext/**/*.rb')].sort.each { |path| require path }
+  Dir[root_path.join('core_ext/**/*.rb')].each { |path| require path }
 
   # Load all initializers of the gem
-  Dir[root_path.join('initializers/**/*.rb')].sort.each { |path| require path }
+  Dir[root_path.join('initializers/**/*.rb')].each { |path| require path }
 
   # Include top-level features
   include PriceHubble::ConfigurationHandling
