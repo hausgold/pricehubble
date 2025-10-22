@@ -13,7 +13,7 @@ RSpec.describe PriceHubble::Identity do
 
     it 'clears any previous identity' do
       expect { described_class.reset_identity! }.to \
-        (change { described_class.class_variable_get(:@@identity) })
+        change { described_class.class_variable_get(:@@identity) }
         .from('something').to(nil)
     end
   end
@@ -59,7 +59,7 @@ RSpec.describe PriceHubble::Identity do
 
         it 'renews the authentication' do
           expect { described_class.identity }.to \
-            (change { described_class.class_variable_get(:@@identity) })
+            change { described_class.class_variable_get(:@@identity) }
             .from(auth)
         end
       end
