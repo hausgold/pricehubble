@@ -1,8 +1,12 @@
 ### next
 
-* Added support for Rails 8.1 (#19)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.1.0 (23 October 2025)
+
+* Added support for Rails 8.1 ([#19](https://github.com/hausgold/pricehubble/pull/19))
 * Switched from `ActiveSupport::Configurable` to a custom implementation based
-  on `ActiveSupport::OrderedOptions` (#20)
+  on `ActiveSupport::OrderedOptions` ([#20](https://github.com/hausgold/pricehubble/pull/20))
 
 ### 2.0.0 (28 June 2025)
 
