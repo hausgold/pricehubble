@@ -1,11 +1,12 @@
+inherit_from:
+  - https://potpourri.hausgold.de/config/rubocop.yml
+  - https://potpourri.hausgold.de/config/rubocop-gem.yml
+
 plugins:
   - rubocop-rspec
   - rubocop-rails
 
 Rails:
-  Enabled: true
-
-Style/Documentation:
   Enabled: true
 
 AllCops:
@@ -20,47 +21,16 @@ AllCops:
     - build/**/*
     - gemfiles/**/*
 
-Metrics/BlockLength:
-  Exclude:
-    - Rakefile
-    - '*.gemspec'
-    - spec/**/*.rb
-    - '**/*.rake'
-    - doc/**/*.rb
-    # Concerns and middlewares contain by nature long blocks
-    - lib/price*hubble/entity/concern/**/*.rb
-    - lib/price*hubble/client/request/**/*.rb
-    - lib/price*hubble/client/response/**/*.rb
-
 # Our examples use +pp+ a lot
 Lint/Debugger:
   Exclude:
     - doc/examples/**/*.rb
-
-# MFA is not yet enabled for our gems yet.
-Gemspec/RequireMFA:
-  Enabled: false
-
-# Document all the things.
-Style/DocumentationMethod:
-  Enabled: true
-  RequireForNonPublicMethods: true
 
 # It's a deliberate idiom in RSpec.
 # See: https://github.com/bbatsov/rubocop/issues/4222
 Lint/AmbiguousBlockAssociation:
   Exclude:
     - "spec/**/*"
-
-# Because +expect_any_instance_of().to have_received()+ is not
-# supported with the +with(hash_including)+ matchers
-RSpec/MessageSpies:
-  EnforcedStyle: receive
-
-# Because nesting makes sense here to group the feature tests
-# more effective. This increases maintainability.
-RSpec/NestedGroups:
-  Max: 4
 
 # Disable regular Rails spec paths.
 Rails/FilePath:
@@ -75,24 +45,9 @@ Lint/ShadowingOuterLocalVariable:
   Exclude:
     - "doc/**/*"
 
-# We stay at 80 characters per line.
-# See: https://rubystyle.guide/#max-line-length
-Layout/LineLength:
-  Max: 80
-
-# We use memoized helpers all over the place to construct inputs and output
-# which can be customized at nested contexts easily.
-RSpec/MultipleMemoizedHelpers:
-  Enabled: false
-
 # That are false-positives because we implement similar working
 # helpers for associations like +.has_one+.
 Rails/ReflectionClassName:
-  Enabled: false
-
-# A very nice feature, but it does not work for non-method code parts atow.
-# So just disabling it for now.
-Style/DocumentDynamicEvalDefinition:
   Enabled: false
 
 # For our examples it's fine to use +pp+ and +puts+,

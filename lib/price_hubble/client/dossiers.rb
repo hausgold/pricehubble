@@ -10,9 +10,6 @@ module PriceHubble
       # @param args [Hash{Symbol => Mixed}] additional arguments
       # @return [PriceHubble::Dossier, nil] the PriceHubble dossier,
       #   or +nil+ on error
-      #
-      # rubocop:disable Metrics/MethodLength -- because thats the bare minimum
-      #   handling is quite complex
       def create_dossier(entity, **args)
         res = connection.post do |req|
           req.path = '/api/v1/dossiers'
@@ -26,7 +23,6 @@ module PriceHubble
           successful?(res)
         end
       end
-      # rubocop:enable Metrics/MethodLength
 
       # Generates a permalink for the specified dossier which will expire after
       # the set number of days.
@@ -35,10 +31,6 @@ module PriceHubble
       # @param ttl [ActiveSupport::Duration] the time to live for the new link
       # @param locale [String] the user frontend locale
       # @param args [Hash{Symbol => Mixed}] additional arguments
-      #
-      # rubocop:disable Metrics/MethodLength -- because thats the bare minimum
-      # rubocop:disable Metrics/AbcSize -- because the decission handling is
-      #   quite complex
       def share_dossier(entity, ttl:, locale:, **args)
         res = connection.post do |req|
           req.path = '/api/v1/dossiers/links'
@@ -57,16 +49,11 @@ module PriceHubble
           successful?(res)
         end
       end
-      # rubocop:enable Metrics/MethodLength
-      # rubocop:enable Metrics/AbcSize
 
       # Delete a dossier entity.
       #
       # @param entity [PriceHubble::Dossier] the entity to delete
       # @param args [Hash{Symbol => Mixed}] additional arguments
-      #
-      # rubocop:disable Metrics/MethodLength -- because thats the bare
-      #   minimumbecause the decission handling is quite complex
       def delete_dossier(entity, **args)
         res = connection.delete do |req|
           req.path = "/api/v1/dossiers/#{entity.id}"
@@ -82,7 +69,6 @@ module PriceHubble
         end
       end
 
-      # rubocop:enable Metrics/MethodLength
       # Update a dossier entity.
       #
       # TODO: Implement this.

@@ -32,9 +32,6 @@ class Hash
   #
   # @param object [Mixed] the object to compact
   # @return [Mixed] the compacted object
-  #
-  # rubocop:disable Metrics/MethodLength -- because of the extra empty hash
-  #   compaction logic
   def deep_compact_in_object(object)
     case object
     when Hash
@@ -48,5 +45,4 @@ class Hash
       object
     end
   end
-  # rubocop:enable Metrics/MethodLength
 end
