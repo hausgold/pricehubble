@@ -37,9 +37,6 @@ module PriceHubble
         # @param hash [Hash{Symbol => Mixed}] all the data as hash
         # @return [Array<RecursiveOpenStruct, Hash{Symbol => Mixed}>] the
         #   left over data
-        #
-        # rubocop:disable Metrics/AbcSize -- because of the complex logic
-        # rubocop:disable Metrics/MethodLength -- because of the complex logic
         def map_has_one_association(attribute, opts, struct, hash)
           # Early exit when the source key is missing on the given data
           key = opts[:from]
@@ -62,8 +59,6 @@ module PriceHubble
           # Pass back the new data
           [struct, hash]
         end
-        # rubocop:enable Metrics/AbcSize
-        # rubocop:enable Metrics/MethodLength
 
         # Map an simple has_many association to the resulting entity attribute.
         # The source key is stripped off according to the association
@@ -76,13 +71,6 @@ module PriceHubble
         # @param hash [Hash{Symbol => Mixed}] all the data as hash
         # @return [Array<RecursiveOpenStruct, Hash{Symbol => Mixed}>] the
         #   left over data
-        #
-        # rubocop:disable Metrics/AbcSize -- because of the complex logic
-        # rubocop:disable Metrics/CyclomaticComplexity -- because of the
-        #   complex logic
-        # rubocop:disable Metrics/PerceivedComplexity -- because of the complex
-        #   logic
-        # rubocop:disable Metrics/MethodLength -- because of the complex logic
         def map_has_many_association(attribute, opts, struct, hash)
           # Early exit when the source key is missing on the given data
           key = opts[:from]
@@ -114,10 +102,6 @@ module PriceHubble
           # Pass back the new data
           [struct, hash]
         end
-        # rubocop:enable Metrics/AbcSize
-        # rubocop:enable Metrics/CyclomaticComplexity
-        # rubocop:enable Metrics/PerceivedComplexity
-        # rubocop:enable Metrics/MethodLength
       end
 
       class_methods do

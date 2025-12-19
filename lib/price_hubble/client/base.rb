@@ -23,8 +23,6 @@ module PriceHubble
       #   end
       #
       # @param con [Faraday::Connection] the connection object
-      #
-      # rubocop:disable Metrics/MethodLength -- because of the middleware list
       def configure(con)
         con.use :instrumentation
 
@@ -44,7 +42,6 @@ module PriceHubble
 
         con.adapter Faraday.default_adapter
       end
-      # rubocop:enable Metrics/MethodLength
 
       # Create a new Faraday connection on the first shot, and pass the cached
       # connection object on subsequent calls.

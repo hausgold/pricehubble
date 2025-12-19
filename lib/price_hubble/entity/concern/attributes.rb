@@ -5,7 +5,6 @@ module PriceHubble
     # An ActiveRecord-like attribute management feature, with the exception
     # that the attributes are not generated through a schema file, but are
     # defined inline the entity class.
-    #
     module Attributes
       extend ActiveSupport::Concern
 
@@ -24,9 +23,6 @@ module PriceHubble
         #
         # @param sanitize [Boolean] whenever to sanitize the data for transport
         # @return [Hash{String => Mixed}] the attribute data
-        #
-        # rubocop:disable Metrics/MethodLength -- because of the key/value
-        #   sanitization handling
         def attributes(sanitize: false)
           attribute_names.each_with_object({}) do |key, memo|
             reader = key
@@ -44,7 +40,6 @@ module PriceHubble
           end
         end
 
-        # rubocop:enable Metrics/MethodLength
         # A wrapper for the +ActiveModel#assign_attributes+ method with support
         # for unmapped attributes. These attributes are put into the
         # +_unmapped+ struct and all the known attributes are assigned like
@@ -73,9 +68,6 @@ module PriceHubble
         # @param obj [Mixed] the object to resolve its attributes
         # @param sanitize [Boolean] whenever to sanitize the data for transport
         # @return [Mixed] the attribute(s) data
-        #
-        # rubocop:disable Metrics/MethodLength -- because thats the pure
-        #   minimum
         def resolve_attributes(obj, sanitize: false)
           if obj.respond_to? :attributes
             obj = if obj.method(:attributes).arity == 1
@@ -93,7 +85,6 @@ module PriceHubble
 
           obj
         end
-        # rubocop:enable Metrics/MethodLength
 
         # Explicitly convert the given struct to an +RecursiveOpenStruct+ and a
         # deep symbolized key copy for further usage.

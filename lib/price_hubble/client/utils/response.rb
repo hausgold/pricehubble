@@ -4,9 +4,6 @@ module PriceHubble
   module Client
     module Utils
       # Some helpers to work with responses in a general way.
-      #
-      # rubocop:disable Metrics/BlockLength -- because of
-      #   ActiveSupport::Concern
       module Response
         extend ActiveSupport::Concern
 
@@ -82,7 +79,6 @@ module PriceHubble
           end
         end
       end
-      # rubocop:enable Metrics/BlockLength
     end
   end
 end

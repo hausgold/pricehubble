@@ -14,13 +14,10 @@ module PriceHubble
         # @param methods [Array<Symbol>] the source method names
         # @raise [NoMethodError] when a source method is not defined
         # @raise [ArgumentError] when a source method does not accept arguments
-        #
-        # rubocop:disable Metrics/MethodLength -- because the method template
-        #   is better inlined
         def bangers(*methods)
           methods.each do |meth|
             raise NoMethodError, "#{self}##{meth} does not exit" \
-              unless instance_methods(false).include? meth
+              unless method_defined?(meth, false)
 
             if instance_method(meth).arity.zero?
               raise ArgumentError,
@@ -34,7 +31,6 @@ module PriceHubble
             RUBY
           end
         end
-        # rubocop:enable Metrics/MethodLength
       end
     end
   end
