@@ -3,7 +3,7 @@
 # All our Ruby core extensions for the +Hash+ class.
 class Hash
   # Perform the regular +Hash#compact+ method on the object but takes care of
-  # deeply nested hashs.
+  # deeply nested hashes.
   #
   # @return [Hash]
   def deep_compact

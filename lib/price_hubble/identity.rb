@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PriceHubble
-  # Handles all the identity retrival high-level logic.
+  # Handles all the identity retrieval high-level logic.
   #
   # rubocop:disable Style/ClassVars -- because we split module code
   module Identity

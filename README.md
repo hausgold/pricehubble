@@ -123,7 +123,7 @@ PriceHubble.identity.expires_at
 
 The pricehubble gem allows you to decide how to react on errors on a
 per-request basis. (except the transparent authentication) All request
-performing methods are shiped in a bang and non-bang variant.
+performing methods are shipped in a bang and non-bang variant.
 
 The bang variants (eg. `PriceHubble::ValuationRequest#perform!`, mind
 the exclamation mark at the end) will raise an child instance of the
@@ -133,7 +133,7 @@ occur. This comes in handy on asynchronous jobs which are retried on
 exceptions.
 
 The non-bang variants (eg. `PriceHubble::ValuationRequest#perform`,
-without the exclamation mark) wont raise and just return empty results
+without the exclamation mark) won't raise and just return empty results
 (eg. `false` or `[]`). This might me comfortable in complex control
 flows or when you do not care if one out of 100 times the data is
 missing. But watch out for bad/invalid requests you might mask with

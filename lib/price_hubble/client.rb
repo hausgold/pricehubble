@@ -7,7 +7,7 @@ module PriceHubble
 
     class_methods do
       # Get a low level client for the requested application. This returns an
-      # already instanciated client object, ready to use.
+      # already instantiated client object, ready to use.
       #
       # @param name [Symbol, String] the client name
       # @return [PriceHubble::Client::Base] a compatible client instance

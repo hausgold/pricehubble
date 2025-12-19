@@ -6,7 +6,7 @@ module PriceHubble
   #
   # @see https://docs.pricehubble.com/#introduction-authentication
   class Authentication < BaseEntity
-    # The expiration leeway to substract to guarantee
+    # The expiration leeway to subtract to guarantee
     # acceptance on remote application calls
     EXPIRATION_LEEWAY = 5.minutes
 

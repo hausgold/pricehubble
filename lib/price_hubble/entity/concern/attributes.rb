@@ -15,7 +15,7 @@ module PriceHubble
         include Attributes::Range
         include Attributes::StringInquirer
 
-        # Collect all registed attribute names as symbols
+        # Collect all registered attribute names as symbols
         class_attribute :attribute_names
 
         # Export all attributes as data hash, as requested by the ActiveModel
@@ -113,7 +113,7 @@ module PriceHubble
         # @param hash [Hash{Symbol => Mixed}] all the data as hash
         # @return [Hash{Symbol => Mixed}] the known attributes
         def initialize_attributes(struct, hash)
-          # Substract known keys, to move them to the +_unmapped+ variable
+          # Subtract known keys, to move them to the +_unmapped+ variable
           attribute_names.each { |key| struct.delete_field(key) }
           # Merge the previous unmapped struct and the given data
           self._unmapped =

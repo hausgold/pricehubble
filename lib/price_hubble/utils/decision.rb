@@ -25,7 +25,7 @@ module PriceHubble
         # switch statement. It contains three decision result paths, the happy
         # case (good), an error case for regular issues (fail) and a error case
         # for fatal issues (bang). You can configure the decision which error
-        # behaiviour you prefer by setting the +bang+ argument to true or
+        # behaviour you prefer by setting the +bang+ argument to true or
         # false.
         #
         # @param bang [Boolean] whenever to bang or not
@@ -73,7 +73,7 @@ module PriceHubble
           @good_proc = block
         end
 
-        # Returns the prefered error method block, based on the +on_error+
+        # Returns the preferred error method block, based on the +on_error+
         # setting.
         #
         # @return [Proc] the error block we should use

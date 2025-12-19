@@ -8,7 +8,7 @@ module PriceHubble
       extend ActiveSupport::Concern
 
       included do
-        # Collect all the registed association configurations
+        # Collect all the registered association configurations
         class_attribute :associations
 
         private
