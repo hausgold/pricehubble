@@ -9,7 +9,7 @@ gemspec
 
 # Development dependencies
 gem 'appraisal', '~> 2.4'
-gem 'bundler', '~> 2.6'
+gem 'bundler', '>= 2.6', '< 5'
 gem 'countless', '~> 2.2'
 # TODO: Remove the upper lock when
 #       https://github.com/thoughtbot/factory_bot/issues/1614 is solved.
