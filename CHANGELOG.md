@@ -1,7 +1,11 @@
 ### next
 
-* Added Ruby 4.0 support (#23)
-* Dropped Ruby 3.2 and Rails 7.1 support (#22)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.3.0 (26 December 2025)
+
+* Added Ruby 4.0 support ([#23](https://github.com/hausgold/pricehubble/pull/23))
+* Dropped Ruby 3.2 and Rails 7.1 support ([#22](https://github.com/hausgold/pricehubble/pull/22))
 
 ### 2.2.0 (19 December 2025)
 
