@@ -15,7 +15,9 @@ require 'active_support/core_ext/string'
 require 'active_model'
 require 'recursive-open-struct'
 require 'faraday'
-require 'faraday_middleware'
+require 'faraday/multipart'
+require 'faraday/follow_redirects'
+require 'faraday/parse_dates'
 
 # The top level namespace for the PriceHubble gem.
 module PriceHubble
