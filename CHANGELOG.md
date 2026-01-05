@@ -1,8 +1,12 @@
 ### next
 
-* Upgraded to Ubuntu 24.04 on Github Actions (#26)
-* Migrated to hausgold/actions@v2 (#25)
-* Upgraded to Faraday 2 (#24)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.4.0 (5 January 2026)
+
+* Upgraded to Ubuntu 24.04 on Github Actions ([#26](https://github.com/hausgold/pricehubble/pull/26))
+* Migrated to hausgold/actions@v2 ([#25](https://github.com/hausgold/pricehubble/pull/25))
+* Upgraded to Faraday 2 ([#24](https://github.com/hausgold/pricehubble/pull/24))
 
 ### 2.3.0 (26 December 2025)
 
