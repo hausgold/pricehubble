@@ -24,9 +24,8 @@ module PriceHubble
       #
       # @param con [Faraday::Connection] the connection object
       def configure(con)
-        con.use :instrumentation
-
         # The definition order is execution order
+        con.request :instrumentation
         con.request :ph_data_sanitization
         con.request :ph_default_headers
         con.request :json
@@ -36,7 +35,7 @@ module PriceHubble
         # The definition order is reverse to the execution order
         con.response :ph_recursive_open_struct
         con.response :ph_data_sanitization
-        con.response :dates
+        con.response :parse_dates
         con.response :json, content_type: /\bjson$/
         con.response :follow_redirects
 
