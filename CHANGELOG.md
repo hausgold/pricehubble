@@ -1,10 +1,10 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Dropped Rails 7.1 support (#27)
 
 ### 2.5.0 (19 January 2026)
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Corrected some Rubocop glitches
 
 ### 2.4.0 (5 January 2026)
 
