@@ -1,6 +1,10 @@
 ### next
 
-* Changed optional Ruby 4.0 CI matrix to required (#28)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.7.0 (10 February 2026)
+
+* Changed optional Ruby 4.0 CI matrix to required ([#28](https://github.com/hausgold/pricehubble/pull/28))
 
 ### 2.6.0 (28 January 2026)
 
