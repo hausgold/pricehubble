@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Changed optional Ruby 4.0 CI matrix to required (#28)
 
 ### 2.6.0 (28 January 2026)
 
