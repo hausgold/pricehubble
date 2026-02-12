@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Corrected broken `ActiveSupport::LogSubscriber#color` usage (#29)
 
 ### 2.7.0 (10 February 2026)
 
