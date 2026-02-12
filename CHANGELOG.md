@@ -1,6 +1,10 @@
 ### next
 
-* Corrected broken `ActiveSupport::LogSubscriber#color` usage (#29)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.8.0 (12 February 2026)
+
+* Corrected broken `ActiveSupport::LogSubscriber#color` usage ([#29](https://github.com/hausgold/pricehubble/pull/29))
 
 ### 2.7.0 (10 February 2026)
 
