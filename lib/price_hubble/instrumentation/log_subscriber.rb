@@ -23,8 +23,6 @@ module PriceHubble
         log_response_details(event)
       end
 
-      private
-
       # Print some top-level request/action details.
       #
       # @param event [ActiveSupport::Notifications::Event] the subscribed event
@@ -82,7 +80,7 @@ module PriceHubble
       def req_origin(env)
         req = env.request.context
         action = req[:action]
-        action = color(action, color_method(action), true)
+        action = color(action, color_method(action), bold: true)
         client = req[:client].to_s.gsub('PriceHubble::Client', 'PriceHubble')
         "#{client.underscore}##{action}"
       end
@@ -93,7 +91,7 @@ module PriceHubble
       # @return [String] the request identifier
       def req_dest(env)
         method = env[:method].to_s.upcase
-        method = color(method, color_method(method), true)
+        method = color(method, color_method(method), bold: true)
         url = env[:url].to_s.gsub(/access_token=[^&]+/,
                                   'access_token=[FILTERED]')
         "#{method} #{url}"
@@ -104,10 +102,12 @@ module PriceHubble
       # @param env [Faraday::Env] the request/response environment
       # @return [String] the request identifier
       def res_result(env)
-        return color('no response', RED, true).to_s if env.response.nil?
+        return color('no response', RED, bold: true).to_s if env.response.nil?
 
         status = env[:status]
-        color("#{status}/#{env[:reason_phrase]}", color_status(status), true)
+        color("#{status}/#{env[:reason_phrase]}",
+              color_status(status),
+              bold: true)
       end
 
       # Decide which color to use for the given HTTP status code.
