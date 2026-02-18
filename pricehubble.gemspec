@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'faraday-follow_redirects', '>= 0.5.0'
   spec.add_dependency 'faraday-multipart', '~> 1.2'
   spec.add_dependency 'faraday-parse_dates', '~> 1.0'
-  spec.add_dependency 'mutex_m', '>= 0.3'
+  spec.add_dependency 'logger', '~> 1.7'
   spec.add_dependency 'recursive-open-struct', '~> 2.0'
   spec.add_dependency 'zeitwerk', '~> 2.6'
 end
