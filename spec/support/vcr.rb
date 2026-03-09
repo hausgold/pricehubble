@@ -45,6 +45,6 @@ end
 # @return [Hash{Symbol}] the cassette options hash
 def cassette(*names, **args)
   {
-    name: "price_hubble/#{names.map(&:to_s).join('/')}"
+    name: "price_hubble/#{names.join('/')}"
   }.merge(args)
 end
