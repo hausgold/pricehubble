@@ -4,7 +4,7 @@
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-(directories %w[lib spec]).select do |d|
+(directories %w[lib/price_hubble spec]).select do |d|
   if Dir.exist?(d)
     d
   else
@@ -35,10 +35,10 @@ guard :rspec, cmd: 'bundle exec rspec' do
   watch('spec/spec_helper.rb') { 'spec' }
   watch(%r{^lib/pricehubble.rb}) { 'spec' }
   watch(%r{^spec/.+_spec\.rb$})
-  watch(%r{^lib/pricehubble/([^\\]+)\.rb$}) do |m|
-    "spec/pricehubble/#{m[1]}_spec.rb"
+  watch(%r{^lib/price_hubble/([^\\]+)\.rb$}) do |m|
+    "spec/price_hubble/#{m[1]}_spec.rb"
   end
-  watch(%r{^lib/pricehubble/([^\\]+)/(.*)\.rb$}) do |m|
+  watch(%r{^lib/price_hubble/([^\\]+)/(.*)\.rb$}) do |m|
     "spec/#{m[1]}/#{m[2]}_spec.rb"
   end
 end
