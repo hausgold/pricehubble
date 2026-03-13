@@ -1,8 +1,12 @@
 ### next
 
-* Corrected some RuboCop issues (#31)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 3.0.0 (13 March 2026)
+
+* Corrected some RuboCop issues ([#31](https://github.com/hausgold/pricehubble/pull/31))
 * Corrected the `Hash#deep_compact` core extension behavior and added specs for
-  it (#32)
+  it ([#32](https://github.com/hausgold/pricehubble/pull/32))
 
 ### 2.9.0 (18 February 2026)
 
