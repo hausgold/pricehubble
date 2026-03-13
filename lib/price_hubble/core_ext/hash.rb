@@ -35,10 +35,9 @@ class Hash
   def deep_compact_in_object(object)
     case object
     when Hash
-      object = object.compact.transform_values do |value|
+      object.compact.transform_values do |value|
         deep_compact_in_object(value)
       end
-      object.empty? ? nil : object.compact
     when Array
       object.map { |item| deep_compact_in_object(item) }
     else

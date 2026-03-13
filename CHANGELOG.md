@@ -1,6 +1,8 @@
 ### next
 
 * Corrected some RuboCop issues (#31)
+* Corrected the `Hash#deep_compact` core extension behavior and added specs for
+  it (#32)
 
 ### 2.9.0 (18 February 2026)
 
