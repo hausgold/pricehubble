@@ -1,6 +1,10 @@
 ### next
 
-* Dropped Ruby 3.x and Rails <8.1 support (#33)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 3.1.0 (4 May 2026)
+
+* Dropped Ruby 3.x and Rails <8.1 support ([#33](https://github.com/hausgold/pricehubble/pull/33))
 
 ### 3.0.0 (13 March 2026)
 
