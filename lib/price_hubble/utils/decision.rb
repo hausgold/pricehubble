@@ -31,9 +31,9 @@ module PriceHubble
         # @param bang [Boolean] whenever to bang or not
         # @yield Runtime to collect the settings and the result
         # @return [Mixed] the result of the decision (good|fail|bang) block
-        def decision(bang: false, &block)
+        def decision(bang: false, &)
           runtime = Runtime.new(on_error: bang ? :bang : :fail)
-          runtime.evaluate(&block)
+          runtime.evaluate(&)
         end
       end
 
