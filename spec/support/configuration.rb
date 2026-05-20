@@ -6,8 +6,7 @@ $yelled = false
 # Set the gem configuration according to the test suite.
 #
 # rubocop:disable Metrics/MethodLength -- because of the extra warnings
-# rubocop:disable Rails/Output -- because we want to write to stdout here
-# rubocop:disable RSpec/Output -- ditto
+# rubocop:disable RSpec/Output -- because we want to write to stdout here
 def reset_test_configuration!
   PriceHubble.reset_configuration!
   PriceHubble.reset_identity!
@@ -42,5 +41,4 @@ def reset_test_configuration!
 end
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Style/GlobalVars
-# rubocop:enable Rails/Output
 # rubocop:enable RSpec/Output
