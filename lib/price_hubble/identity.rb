@@ -3,7 +3,7 @@
 module PriceHubble
   # Handles all the identity retrieval high-level logic.
   #
-  # rubocop:disable Style/ClassVars -- because we split module code
+  # rubocop:disable-next Style/ClassVars -- because we split module code
   module Identity
     extend ActiveSupport::Concern
 
@@ -43,5 +43,4 @@ module PriceHubble
       end
     end
   end
-  # rubocop:enable Style/ClassVars
 end
