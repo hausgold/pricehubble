@@ -1,6 +1,10 @@
 ### next
 
-* Corrected some RuboCop glitches (#35)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 3.3.0 (27 August 2026)
+
+* Corrected some RuboCop glitches ([#35](https://github.com/hausgold/pricehubble/pull/35))
 
 ### 3.2.0 (20 May 2026)
 
