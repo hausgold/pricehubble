@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-# rubocop:disable Style/ClassVars -- because we split module code
+# rubocop:disable-next Style/ClassVars -- because we split module code
 RSpec.describe PriceHubble::Identity do
   let(:described_class) { PriceHubble }
 
@@ -66,4 +66,3 @@ RSpec.describe PriceHubble::Identity do
     end
   end
 end
-# rubocop:enable Style/ClassVars
