@@ -1,6 +1,10 @@
 ### next
 
-* Pinned json gem to <3.0 (#36)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 3.4.0 (14 September 2026)
+
+* Pinned json gem to <3.0 ([#36](https://github.com/hausgold/pricehubble/pull/36))
 
 ### 3.3.0 (27 August 2026)
 
